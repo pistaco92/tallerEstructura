@@ -1,7 +1,7 @@
 # tallerEstructura
 Documentacion de taller laboratorio.
 
-Primero, explicando la estructura del programa en general. Para el diseño del software, opte por usar el “command patern” para la clase app y sus funcionalidades especificas. Dado que me permite tener mas control al momento que se accede o se agrega una funcionalidad nueva a una aplicación (el registro automatico, por ejemplo, es uno de los beneficios que obtuve al usar este sistema, mas adelante hablare de ello).
+Primero, explico la estructura del programa en general. Para el diseño del software, opte por usar el “command patern” para la clase app y sus funcionalidades especificas. Dado que me permite tener mas control al momento que se accede o se agrega una funcionalidad nueva a una aplicación (el registro automatico, por ejemplo, es uno de los beneficios que obtuve al usar este sistema, mas adelante hablare de ello).
 
 Capa app contiene, ademas de los atributos basales exigidos en los requerimientos, lo siguiente:
 
@@ -23,12 +23,12 @@ el orden de herencia no es arbitrario, dado que el hecho que AppAtributos sea pr
 
 
 
-En relacion a los comandos, expongo que estos se encuentran en el archivos commandos.cpp, el cual contiene ademas de la interfaz commander, todos los commandos unicos de cada aplicación. Este sistema permite que por ejemplo, si se desea cambiar un metodo, es tan simple como que herede la interfaz metodo (o el metodo de tipo de su eleccion), realice un override al metodo ejecutar, y con ello puede reconfigurar la logica interna. 
+En relacion a los comandos, expongo que estos se encuentran en el archivo commandos.cpp, el cual contiene ademas de la interfaz commander, todos los commandos unicos de cada aplicación. Este sistema permite que por ejemplo, si se desea cambiar un metodo, es tan simple como que herede la interfaz metodo (o el metodo de tipo de su eleccion), realice un override al metodo ejecutar, y con ello puede reconfigurar la logica interna. 
 
-Ademas, este sistema permite el resgitro automatico, dado que al estar identificados los comandos con un nombre, y almacenados en un vector de la app, en el momento es que yo agrego un vector inmediatamente se actualiza la lista de comandos disponibles que se desplega en el menu de usuario, dado que esta se genera a partir de esa estrucutra. Tal comodidad, hubiese sido (bajo mi criterio), dificil de conseguir si hubiera optado por usar metodos de clase, dado que me fuerza a escribir manualmente en un registro los metodos disponibles. 
+Ademas, este sistema permite el regitro automatico, dado que al estar identificados los comandos con un nombre, y almacenados en un vector de la app, en el momento es que yo agrego un vector inmediatamente se actualiza la lista de comandos disponibles que se desplega en el menu de usuario, dado que esta se genera a partir de esa estrucutra. Tal comodidad, hubiese sido (bajo mi criterio), dificil de conseguir si hubiera optado por usar metodos de clase, dado que me fuerza a manualmente actualizar un registro con los metodos disponibles. 
 
 
-Funcionalidades extra:
+3 Funcionalidades extra:
 
 1) El sistema basado en comandos automatizado.
 2) menu tipo linux
@@ -65,7 +65,7 @@ estas serian las micro-funcionalidades nuevas.
 	a) ls+app, que muestra todos los commandos disponibles en una app, incluso los que no se tiene permiso. Mientras que ls muestra solo los permitidos. 
 	b) help, que expone la informacion sobre el uso del programa
 	c) ejecutar.
- Que permite ejecutar un comando de una app mediante una sintaxis intuiva para el programador. Si bien, la funcionalidad persee no es novedosa, dado que se expone en los requerimientos, le hago mencion dado, el formato de la interfaz, la invencion de la sintaxis, y el algoritmo para procesar la instrucción, considero que lo vuelve una “funcionalidad extra”.
+permite ejecutar un comando de una app mediante una sintaxis intuiva para el programador. Si bien, la funcionalidad persee no es novedosa, dado que se expone en los requerimientos, le hago mencion dado, el formato de la interfaz, la invencion de la sintaxis, y el algoritmo para procesar la instrucción, considero son factores que lo vuelven una “funcionalidad extra”.
 
 
 En el programa, hay una funcion llamada createAppAndUsers, que detalla los usuarios y aplicaciones creadas el inicio del programa. Solamente contiene llamadas de funciones, cuyos nombres logran explicar los objetos que se crean al inicio del main.
